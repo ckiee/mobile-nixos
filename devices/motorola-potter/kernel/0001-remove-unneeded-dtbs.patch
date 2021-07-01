@@ -1,0 +1,13 @@
+diff --git a/arch/arm64/boot/dts/qcom/sdm625-motorola-potter.dts b/arch/arm64/boot/dts/qcom/sdm625-motorola-potter.dts
+index 741a6241eec3..171b2939a8c0 100644
+--- a/arch/arm64/boot/dts/qcom/sdm625-motorola-potter.dts
++++ b/arch/arm64/boot/dts/qcom/sdm625-motorola-potter.dts
+@@ -19,7 +19,7 @@ / {
+ 	model = "Motorola G5 Plus (potter)";
+ 	compatible = "qcom,msm8953-potter", "qcom,msm8953-moto", "qcom,msm8953";
+ 	qcom,msm-id = <293 0>;
+-	qcom,board-id = <0x46 0x83a0>;
++	qcom,board-id = <0x46 0x83a0>,<0x46 0x83b0>;
+ 
+ 	aliases {
+ 		panel = &panel;

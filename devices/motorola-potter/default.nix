@@ -31,6 +31,7 @@
       offset_tags = "0x00000100";
       pagesize = "2048";
     };
+    appendDt = "qcom/sdm625-motorola-potter.dtb";
   };
 
   # The boot partition on this phone is 16MB, so use `xz` compression

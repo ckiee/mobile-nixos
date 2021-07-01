@@ -19,15 +19,9 @@ mobile-nixos.kernel-builder {
   };
 
   patches = [
-    # ./04_fix_camera_msm_isp.patch
-    # ./99_framebuffer.patch
-    # ./0001-Allow-building-WCD9335_CODEC-without-REGMAP_ALLOW_WR.patch
-    # ./0005-Allow-building-with-sound-disabled.patch
-    # ./0007-Coalesce-identical-device-trees.patch
-    # ./0008-Notify-clients-when-FB-opened.patch
+    ./0001-remove-unneeded-dtbs.patch
   ];
 
-#  enableRemovingWerror = true;
   isModular = true;
-  isQcdt = true;
+  isQcdt = false;
 }

@@ -18,6 +18,7 @@ let
     inherit cmdline;
     initrd = stage-0.system.build.initrd;
     name = "mobile-nixos_${device.name}_${bootimg.name}";
+    inherit kernelPackage;
     kernel = "${kernelPackage}/${kernelPackage.file}";
   };
 
@@ -142,6 +143,13 @@ in
           type = types.nullOr types.path;
           default = null;
           description = "Path to a flattened device tree to pass as --dt to mkbootimg";
+          internal = true;
+        };
+
+        appendDt = lib.mkOption {
+          type = types.nullOr types.str;
+          default = null;
+          description = "Path to a flattened device tree to append to kernel image";
           internal = true;
         };
 

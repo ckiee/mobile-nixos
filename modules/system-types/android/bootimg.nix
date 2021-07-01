@@ -17,6 +17,7 @@ pkgs.runCommandNoCC name {
   nativeBuildInputs = with buildPackages; [
     mkbootimg
     dtbTool
+    lk2nd
   ];
 } ''
   echo Using kernel: ${kernel}

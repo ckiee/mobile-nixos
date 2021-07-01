@@ -28,6 +28,7 @@ in
         with self; overrideCC stdenv (merged_gcc7)
       ;
     };
+    lk2nd = callPackage ./lk2nd { };
     mkbootimg = callPackage ./mkbootimg { };
     msm-fb-refresher = callPackage ./msm-fb-refresher { };
     ply-image = callPackage ./ply-image { };

@@ -38,11 +38,19 @@
 
   mobile.boot.stage-1.compression = lib.mkDefault "xz";
 
-  mobile.usb.mode = "android_usb";
-  # Google
-  mobile.usb.idVendor = "18D1";
-  # "Nexus 4"
-  mobile.usb.idProduct = "D001";
+  mobile.usb = {
+    mode = "gadgetfs";
+
+    # Google
+    idVendor = "18D1";
+    # "Nexus 4"
+    idProduct = "D001";
+
+    gadgetfs.functions = {
+#    rndis = "rndis_bam.rndis";
+    adb = "ffs.adb";
+    };
+  };
 
   mobile.system.type = "android";
 

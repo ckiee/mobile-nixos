@@ -486,7 +486,7 @@ stdenv.mkDerivation (inputArgs // {
 
         # Stops `make ...config` from starting the application.
         cp scripts/kconfig/Makefile scripts/kconfig/Makefile.old
-        sed -i"" -e 's/$< .*$(Kconfig)/echo "no-op"/' scripts/kconfig/Makefile
+        sed -i"" -e 's/$< .*$(Kconfig)/ echo "no-op"/' scripts/kconfig/Makefile
 
         # Build the ...config application.
         make $makeFlags "''${makeFlagsArray[@]}" $buildFlags

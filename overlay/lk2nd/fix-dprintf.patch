@@ -1,0 +1,11 @@
+--- a/arch/arm/faults.c.orig	2021-06-10 21:12:46.110925017 +0100
++++ b/arch/arm/faults.c	2021-06-10 21:13:02.740902541 +0100
+@@ -63,7 +63,7 @@
+ {
+ 	inc_critical_section();
+ 	frame->pc += pc_off;
+-	dprintf(CRITICAL, msg);
++	dprintf(CRITICAL, "%s", msg);
+ 	dump_fault_frame(frame);
+ 	
+ 	halt();

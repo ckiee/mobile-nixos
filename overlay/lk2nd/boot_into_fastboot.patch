@@ -1,0 +1,13 @@
+diff --git a/app/aboot/aboot.c b/app/aboot/aboot.c
+index 3863e4d9..9e83ded5 100755
+--- a/app/aboot/aboot.c
++++ b/app/aboot/aboot.c
+@@ -237,7 +237,7 @@ static bool boot_into_ffbm;
+ static char *target_boot_params = NULL;
+ static bool boot_reason_alarm;
+ static bool devinfo_present = true;
+-bool boot_into_fastboot = false;
++bool boot_into_fastboot = true;
+ static uint32_t dt_size = 0;
+ 
+ /* Assuming unauthorized kernel image by default */

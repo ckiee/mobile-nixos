@@ -18,7 +18,6 @@ let
     inherit cmdline;
     initrd = stage-0.system.build.initrd;
     name = "mobile-nixos_${device.name}_${bootimg.name}";
-    inherit kernelPackage;
     kernel = "${kernelPackage}/${kernelPackage.file}";
   };
 
@@ -37,6 +36,7 @@ let
     cp -v ${android-bootimg} $out/boot.img
     ${optionalString has_recovery_partition ''
     cp -v ${android-recovery} $out/recovery.img
+    cp -v ${pkgs.lk2nd}/lib/lk2nd.img $out/
     ''}
     cat > $out/flash-critical.sh <<'EOF'
     #!/usr/bin/env bash
@@ -193,6 +193,10 @@ in
 
     (lib.mkIf kernelPackage.isExynosDT {
       mobile.system.android.bootimg.dt = "${kernelPackage}/dt.img";
+    })
+
+    (lib.mkIf (config.mobile.system.android.bootimg.appendDt != null) {
+      mobile.system.android.bootimg.dt = "${kernelPackage}/dtbs/${config.mobile.system.android.bootimg.appendDt}";
     })
 
     {

@@ -38,6 +38,10 @@ lib.mkIf isCross
   # udisks fails due to gobject-introspection being not cross-compilation friendly.
   services.udisks2.enable = false;
 
+  # build fails due to missing xmllint
+  # meson.build:24:0: ERROR: Program 'xmllint' not found
+  xdg.mime.enable = false;
+
   nixpkgs.overlays = lib.mkMerge [
     (lib.mkIf config.nixpkgs.crossSystem.isAarch32 [ AArch32Overlay ])
   ];

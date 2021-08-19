@@ -122,6 +122,9 @@ in
       kernel-builder-clang_9 = callPackage ./mobile-nixos/kernel/builder.nix {
         stdenv = with self; overrideCC stdenv buildPackages.clang_9;
       };
+      kernel-builder-clang_10 = callPackage ./mobile-nixos/kernel/builder.nix {
+        stdenv = with self; overrideCC stdenv buildPackages.clang_10;
+      };
 
       stage-1 = {
         script-loader = callPackage ../boot/script-loader {};

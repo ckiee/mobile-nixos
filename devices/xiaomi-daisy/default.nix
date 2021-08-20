@@ -25,13 +25,16 @@
     # This device adds skip_initramfs to cmdline for normal boots
     boot_as_recovery = true;
 
-    bootimg.flash = {
-      offset_base = "0x80000000";
-      offset_kernel = "0x00008000";
-      offset_ramdisk = "0x01000000";
-      offset_second = "0x00f00000";
-      offset_tags = "0x00000100";
-      pagesize = "2048";
+    bootimg = {
+      flash = {
+        offset_base = "0x80000000";
+        offset_kernel = "0x00008000";
+        offset_ramdisk = "0x01000000";
+        offset_second = "0x00f00000";
+        offset_tags = "0x00000100";
+        pagesize = "2048";
+      };
+      appendDt = "qcom/sdm625-xiaomi-daisy.dtb";
     };
   };
 

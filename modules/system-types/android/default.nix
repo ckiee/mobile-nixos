@@ -34,9 +34,9 @@ let
     mkdir -p $out
     cp -v ${rootfs}/${rootfs.filename} $out/system.img
     cp -v ${android-bootimg} $out/boot.img
+    cp -v ${pkgs.lk2nd}/lib/lk2nd.img $out/
     ${optionalString has_recovery_partition ''
     cp -v ${android-recovery} $out/recovery.img
-    cp -v ${pkgs.lk2nd}/lib/lk2nd.img $out/
     ''}
     cat > $out/flash-critical.sh <<'EOF'
     #!/usr/bin/env bash
